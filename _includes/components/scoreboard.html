@@ -1,6 +1,6 @@
 {% assign title = include.title %}
 {% assign value = include.value %}
-{% assign percentageChange = include.percentageChange | pluse: 0 %}
+{% assign percentageChange = include.percentageChange | plus: 0 %}
 <div class="card">
   <div class="card-body p-3 text-center">
     <div class="text-right {% if percentageChange >= 0 %}text-green{% else %}text-red{% endif %}">
