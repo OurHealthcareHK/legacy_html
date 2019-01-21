@@ -15,3 +15,7 @@
   subitems:
     - title: Cards design
       url: /cards.html
+    - title: Charts
+      url: /charts.html
+    - title: Pricing cards
+      url: /pricing-cards.html
