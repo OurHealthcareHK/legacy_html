@@ -14,7 +14,7 @@
       <li class="nav-item{% if navitem.subitems %} dropdown{% endif %}">
         <!-- {{ page.url}} -->
         <!-- {{navitem.url}} -->
-        <a href="{% if navitem.subitems %}javascript:void(0)" data-toggle="dropdown{% else %}{{ navitem.url | relative_url }}{% endif %}" class="nav-link {% if page.url == navitem.url or page.url in subitemlinks %} active{% endif %}"><i class="{{ navitem.icon }}"></i> {{ navitem.title }}</a>
+        <a href="{% if navitem.subitems %}javascript:void(0)" data-toggle="dropdown{% else %}{{ navitem.url | relative_url }}{% endif %}" class="nav-link {% if page.url == navitem.url or subitemlinks contains page.url %} active{% endif %}"><i class="{{ navitem.icon }}"></i> {{ navitem.title }}</a>
         {% if navitem.subitems %}
           {% assign subitemlinks = navitem.subitems | map: 'url' %}
           <div class="dropdown-menu dropdown-menu-arrow">
