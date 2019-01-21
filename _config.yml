@@ -17,3 +17,7 @@ markdown:       kramdown
 sass:
   sass_dir:     _sass
   style:        compressed
+
+
+# Permalinks
+permalink:      /data/:title/
