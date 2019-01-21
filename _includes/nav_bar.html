@@ -12,8 +12,15 @@
     <ul class="nav nav-tabs border-0 flex-column flex-lg-row">
       {% for navitem in site.data.toc %}
       <li class="nav-item">
-        <a href="{{ navitem.url | relative_url }}" class="nav-link"><i class="{{ navitem.icon }}"></i> {{ navitem.title }}</a>
+        <a href="{% if navitem.subitems %}javascript:void(0){% else %}{{ navitem.url | relative_url }}{% endif %}" class="nav-link"><i class="{{ navitem.icon }}"></i> {{ navitem.title }}</a>
       </li>
+        {% if navitem.subitems %}
+          <div class="dropdown-menu dropdown-menu-arrow">
+          {% for entry in navitem.subitems %}
+            <a href="{{ entry.url }}" class="dropdown-item ">{{ entry.title }}</a>
+          {% endfor %}
+          </div>
+        {% endif %}
       {% endfor %}
       <li class="nav-item">
         <a href="javascript:void(0)" class="nav-link" data-toggle="dropdown"><i class="fe fe-box"></i> Interface</a>
