@@ -17,7 +17,7 @@
         {% if navitem.subitems %}
           <div class="dropdown-menu dropdown-menu-arrow">
           {% for entry in navitem.subitems %}
-            <a href="{{ entry.url }}" class="dropdown-item ">{{ entry.title }}</a>
+            <a href="{{ entry.url | relative_url }}" class="dropdown-item ">{{ entry.title }}</a>
           {% endfor %}
           </div>
         {% endif %}
