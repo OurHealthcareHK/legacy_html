@@ -11,12 +11,12 @@
   <div class="col-lg order-lg-first">
     <ul class="nav nav-tabs border-0 flex-column flex-lg-row">
       {% for navitem in site.data.toc %}
-      <li class="nav-item{% if navitem.subitems %} dropdown{% endif %}">
+      <li class="nav-item{% if navitem.subitems %} dropdown{% endif %}{% if page.url == navitem.url %} active{% endif %}">
         <a href="{% if navitem.subitems %}javascript:void(0)" data-toggle="dropdown{% else %}{{ navitem.url | relative_url }}{% endif %}" class="nav-link"><i class="{{ navitem.icon }}"></i> {{ navitem.title }}</a>
         {% if navitem.subitems %}
           <div class="dropdown-menu dropdown-menu-arrow">
           {% for entry in navitem.subitems %}
-            <a href="{{ entry.url | relative_url }}" class="dropdown-item ">{{ entry.title }}</a>
+            <a href="{{ entry.url | relative_url }}" class="dropdown-item {% if page.url == entry.url %}active{% endif %}">{{ entry.title }}</a>
           {% endfor %}
           </div>
         {% endif %}
