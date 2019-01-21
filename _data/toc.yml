@@ -1,0 +1,12 @@
+- title: Home
+  icon: fe fe-home
+  url: /index.html
+- title: Forms
+  icon: fe fe-check-square
+  url: /form-elements.html
+- title: Gallery
+  icon: fe fe-image
+  url: /gallery.html
+- title: Documentation
+  icon: fe fe-file-text
+  url: /docs/index.html
