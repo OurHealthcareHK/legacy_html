@@ -10,3 +10,8 @@
 - title: Documentation
   icon: fe fe-file-text
   url: /docs/index.html
+- title: Interface
+  icon: fe fe-file-text
+  subitems:
+    - title: Cards design
+      url: /cards.html
