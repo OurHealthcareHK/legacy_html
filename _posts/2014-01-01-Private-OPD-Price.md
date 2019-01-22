@@ -16,8 +16,9 @@ categories: [醫療服務實況]
 3. 由於某部分醫院提供長者、醫療卡優惠，最終最低收費或會有不同。
 
 <script>
-require(['highcharts-data','highcharts-exporting'], function(highcharts,exporting) { 
+require(['highcharts','highcharts-data','highcharts-exporting'], function(Highcharts, data, exporting) { 
   exporting(Highcharts);
+  data(Highcharts);
   var raw = {{ site.data.PRIVATEOPDPRICE | jsonify }};
   var options = {
       "chart": {
