@@ -114,7 +114,7 @@ var cfg = {
   var chart = new Chart(ctx, cfg);
   
   function getData(fetchSize) {
-      $('#statistics').sheetrock({
+      sheetrock({
           url: mySpreadsheet,
           query: "select D,E,F,G,H order by D desc",
           fetchSize: fetchSize,
