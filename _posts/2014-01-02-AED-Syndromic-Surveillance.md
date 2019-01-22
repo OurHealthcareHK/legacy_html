@@ -2,7 +2,7 @@
 layout: post
 title: 急症傳染病症狀監測
 desc: 以急診室求診的主要病徵為依據，追蹤市內各種傳染病症的流行程度。
-category: 公共衛生實況
+categories: ['公共衛生實況']
 img: pic01.jpg
 level: 第一級
 ---
