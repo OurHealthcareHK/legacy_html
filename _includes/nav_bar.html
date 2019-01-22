@@ -28,8 +28,7 @@
       <!-- for posts -->
       {% for category in site.categories %}
       <li class="nav-item dropdown">
-        <!-- {{ page.url}} -->
-        <!-- {{navitem.url}} -->
+        <!-- {{ category | jsonify }} -->
         {% assign subitemlinks = category | map: 'url' %}
         <a href="javascript:void(0)" data-toggle="dropdown" class="nav-link {% if subitemlinks contains page.url %} active{% endif %}">{{ forloop.index }}</a>
           <div class="dropdown-menu dropdown-menu-arrow">
