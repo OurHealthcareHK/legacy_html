@@ -24,7 +24,6 @@ Last updated by Our Application:
 <script>  //update chart
 
 require(['chart-js', 'sheetrock'], function(chart, sheetrock) {
-  var chart = new Chart(ctx, cfg);
   
 var flu = [];
 var hfmd = [];
@@ -113,6 +112,7 @@ var cfg = {
         }
     }
 };
+  var chart = new Chart(ctx, cfg);
   function parseDate(dateString) {
     return moment(dateString, 'DD-MMM-YYYY', 'en');
   }
