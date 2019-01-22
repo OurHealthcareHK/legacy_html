@@ -3,6 +3,7 @@ require.config({
         'chart-js': ['moment']
     },
     paths: {
-        'chart-js': '//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min'
+        'chart-js': '//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min',
+        'moment': 'assets/plugins/fullcalendar/js/moment.min'
     }
 });
