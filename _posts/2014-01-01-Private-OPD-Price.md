@@ -60,7 +60,6 @@ require(['highcharts','highcharts-data','highcharts-exporting'], function(Highch
         "rows": raw
       }
   };
-  var chart = new Highcharts.Chart("highcharts", options);
-  console.log(chart);
+  Highcharts.chart("highcharts", options);
 });
 </script>
