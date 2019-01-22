@@ -47,7 +47,7 @@ tags: [健康資訊]
 	  '<div class="col-sm-6 col-lg-4">'+
 	  '  <div class="card p-3">'+
 	  '    <a href="'+response.rows[i][0]+'" class="mb-3">'+
-	  '	<img src="data:image/png;base64,'+base64.replace(/["']/g, '')+'" alt="'+response.rows[i][2]+'" class="rounded">'+
+	  '	<img src="data:image/png;base64,'+response.rows[i][1].replace(/["']/g, '')+'" alt="'+response.rows[i][2]+'" class="rounded">'+
 	  '    </a>'+
 	  '    <div class="d-flex align-items-center px-2">'+
 	  '     <div class="avatar avatar-md mr-3" style="background-image: url(demo/faces/male/41.jpg)"></div>'+
