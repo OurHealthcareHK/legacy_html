@@ -1,6 +1,6 @@
 require.config({
     shim: {
-        'moment-tc': ['moment']
+        'moment-tc': ['moment'],
         'chart-js': ['moment-tc']
     },
     paths: {
