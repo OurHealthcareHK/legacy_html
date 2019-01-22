@@ -6,7 +6,8 @@ tags: [公共衛生實況]
 img: pic01.jpg
 level: 第一級
 ---
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sheetrock/1.1.4/dist/sheetrock.min.js"></script>
+<script src="{{ "/assets/plugins/sheetrock/plugin.js" | relative_url }}"></script>
+<script src="{{ "/assets/plugins/chart-js/plugin.js" | relative_url }}"></script>
 
 Last updated by Centre for Health Protection: 
 <span id="lastmodified"></span>
