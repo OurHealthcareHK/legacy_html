@@ -7,7 +7,6 @@ img: pic01.jpg
 tags: [健康資訊]
 ---
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="{{ "/assets/plugins/typeahead/plugin.js" | relative_url }}"></script>
 <div class="page-header">
   <h1 class="page-title">
@@ -58,7 +57,7 @@ tags: [健康資訊]
         );
       }
     }
-require(['jquery','typeahead'], function($, typeahead) {
+require(['typeahead'], function(typeahead) {
 
 $(document).ready(function() { //wait for document ready
   var timer;
