@@ -4,7 +4,7 @@ title: 健康資訊搜尋器
 desc: 為你搜尋醫管局、衛生署、各大醫院及醫學院提供的資料。不定時更新。
 level: 第一級
 img: pic01.jpg
-category: 健康資訊
+categoryies: ['健康資訊']
 ---
 
 <script src="{{ "/assets/plugins/typeahead/plugin.js" | relative_url }}"></script>
