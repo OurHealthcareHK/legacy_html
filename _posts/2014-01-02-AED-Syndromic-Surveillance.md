@@ -37,9 +37,6 @@ var chartColors = {
     grey: 'rgb(201, 203, 207)'
 };
 
-function parseDate(dateString) {
-    return moment(dateString, 'DD-MMM-YYYY', 'en');
-}
 var ctx = document.getElementById("chart").getContext("2d");
 var cfg = {
     type: 'bar',
@@ -114,6 +111,11 @@ var cfg = {
 };
 require(['chart-js', 'sheetrock'], function(chart, sheetrock) {
   var chart = new Chart(ctx, cfg);
+  
+  function parseDate(dateString) {
+    return moment(dateString, 'DD-MMM-YYYY', 'en');
+  }
+  
   function getData(fetchSize) {
       $('#statistics').sheetrock({
           url: mySpreadsheet,
