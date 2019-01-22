@@ -1,6 +1,6 @@
 require.config({
     shim: {
-        'highcharts': ['highcharts-data', 'highcharts-exporting']
+        'highcharts-data': ['highcharts']
     },
     paths: {
         'highcharts': '//code.highcharts.com/highcharts',
