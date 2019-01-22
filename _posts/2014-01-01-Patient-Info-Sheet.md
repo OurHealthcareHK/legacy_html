@@ -58,7 +58,7 @@ tags: [健康資訊]
         );
       }
     }
-require(['typeahead', 'jquery'], function(typeahead, $) {
+require(['jquery','typeahead'], function($, typeahead) {
 
 $(document).ready(function() { //wait for document ready
   var timer;
