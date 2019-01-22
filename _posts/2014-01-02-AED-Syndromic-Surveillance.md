@@ -39,7 +39,6 @@ var chartColors = {
     purple: 'rgb(153, 102, 255)',
     grey: 'rgb(201, 203, 207)'
 };
-
 var ctx = document.getElementById("chart").getContext("2d");
 var cfg = {
     type: 'bar',
@@ -100,7 +99,7 @@ var cfg = {
                 type: 'time',
                 distribution: 'series',
                 time: {
-                    parser: parseDate
+                    parser: function (dateString) { return moment(dateString, 'DD-MMM-YYYY', 'en'); }
                 }
             }],
             yAxes: [{
@@ -113,9 +112,6 @@ var cfg = {
     }
 };
   var chart = new Chart(ctx, cfg);
-  function parseDate(dateString) {
-    return moment(dateString, 'DD-MMM-YYYY', 'en');
-  }
   
   function getData(fetchSize) {
       $('#statistics').sheetrock({
