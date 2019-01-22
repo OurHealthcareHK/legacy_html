@@ -20,7 +20,7 @@ level: 第一級
 資料來源：[政府一站通搜尋功能 www.search.gov.hk](http://www.search.gov.hk/result?query="occupancy+rates"+"medical+wards"+"statistics"+"public hospitals"&search_but=&ui_charset=utf-8&web=this&output=xml_no_dtd&client=depts&proxystylesheet=ogcio_home_adv_frontend&ui_lang=en&r_lang=&gp1=gia_home&gp0=gia_home&web=this&txtonly=0&tpl_id=stdsearch&oe=UTF-8&ie=UTF-8&sort=date%3AS%3AS%3Ad1&site=gia_home&num=50)
   
 <script>
-require(['chart-heaptmap'], function(chart) { 
+require(['chart-heatmap'], function(chart) { 
   function ctx(elementId){
     return document.getElementById(elementId).getContext('2d');
   }
