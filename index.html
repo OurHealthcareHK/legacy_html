@@ -270,26 +270,10 @@ Home
     </script>
   </div>
   <div class="col-sm-6">
-    <div class="card">
-      <div class="card-body text-center">
-	<div class="h5">New feedback</div>
-	<div class="display-4 font-weight-bold mb-4">62</div>
-	<div class="progress progress-sm">
-	  <div class="progress-bar bg-red" style="width: 28%"></div>
-	</div>
-      </div>
-    </div>
+    {{ include components/progress.html title="New feedback" precentage="28" value="62" color = "red"}}
   </div>
   <div class="col-sm-6">
-    <div class="card">
-      <div class="card-body text-center">
-	<div class="h5">Today profit</div>
-	<div class="display-4 font-weight-bold mb-4">$652</div>
-	<div class="progress progress-sm">
-	  <div class="progress-bar bg-green" style="width: 84%"></div>
-	</div>
-      </div>
-    </div>
+    {{ include components/progress.html title="Today's profit" precentage="84" value="$652" }}
   </div>
 </div>
 </div>
