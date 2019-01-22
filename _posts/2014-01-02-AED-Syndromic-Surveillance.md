@@ -111,7 +111,7 @@ var cfg = {
         }
     }
 };
-require(['jquery', 'chart-js'], function($, chart) {
+require(['chart-js', 'sheetrock'], function(chart, sheetrock) {
   var chart = new Chart(ctx, cfg);
   function getData(fetchSize) {
       $('#statistics').sheetrock({
