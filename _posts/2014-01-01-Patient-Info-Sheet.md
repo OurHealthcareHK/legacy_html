@@ -8,7 +8,7 @@ tags: [健康資訊]
 ---
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/corejs-typeahead/1.2.1/typeahead.bundle.js"></script>
+<script src="{{ "/assets/plugins/typeahead/plugin.js" | relative_url }}"></script>
 <div class="page-header">
   <h1 class="page-title">
     健康資訊搜尋器
@@ -58,6 +58,8 @@ tags: [健康資訊]
         );
       }
     }
+require(['typeahead', 'jquery'], function(typeahead, $) {
+
 $(document).ready(function() { //wait for document ready
   var timer;
   var delay = 600; // 0.6 seconds delay after last input
@@ -82,7 +84,6 @@ $(document).ready(function() { //wait for document ready
     }, delay);
   })
 }); // END READY 
-
 var nameArray = [].concat({{ site.data.INFOSHEETNAMES | jsonify }});
 var names = new Bloodhound({
   datumTokenizer: Bloodhound.tokenizers.whitespace,
@@ -99,4 +100,7 @@ $('.search').typeahead({
   name: 'names',
   source: names
 });
+
+});
+
 </script>
