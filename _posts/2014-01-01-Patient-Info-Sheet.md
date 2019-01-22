@@ -19,20 +19,18 @@ tags: [健康資訊]
       <span class="input-icon-addon">
         <i class="fe fe-search"></i>
       </span>
-      <div id="bloodhound">
-        <input class="typeahead search form-control w-10" placeholder="搜尋資料...">
-      </div>
+      <input class="typeahead search form-control w-10" placeholder="搜尋資料...">
     </div>
   </div>
 </div>
 
 <div class="result_count"></div>
-<div class="result_link">
+<div class="row row-cards result_link">
 </div>
 
 <script>
     function base64toImg(base64){
-        return "<img src='data:image/png;base64,"+base64.replace(/["']/g, "")+"'>";
+        return "<img src=>";
     }
     function updateChart(response) {
 	if (!response.rows){
@@ -45,13 +43,22 @@ tags: [健康資訊]
       $('div.result_count').empty();
       $('div.result_count').text("We have found " + response.rows.length + " results.");
       for (var i=0; i<response.rows.length; i++){
-         $('div.result_link').append(
-            "<a href='"+response.rows[i][0]+"'>"+
-            "<p>"+response.rows[i][0]+"</p>"+
-            "<p>"+response.rows[i][2]+"</p>"+
-            base64toImg(response.rows[i][1])+
-            "</a>"                                
-         );
+        $('div.result_link').append(	
+	  '<div class="col-sm-6 col-lg-4">'+
+	  '  <div class="card p-3">'+
+	  '    <a href="'+response.rows[i][0]+'" class="mb-3">'+
+	  '	<img src="data:image/png;base64,'+base64.replace(/["']/g, '')+'" alt="'+response.rows[i][2]+'" class="rounded">'+
+	  '    </a>'+
+	  '    <div class="d-flex align-items-center px-2">'+
+	  '     <div class="avatar avatar-md mr-3" style="background-image: url(demo/faces/male/41.jpg)"></div>'+
+	  '	<div>'+
+	  '	  <div>'+response.rows[i][2]+'</div>'+
+	  '	  <small class="d-block text-muted">'+response.rows[i][0]+'</small>'+
+	  '	</div>'+
+	  '    </div>'+
+	  '  </div>'+
+	  '</div>'                          
+        );
       }
     }
 $(document).ready(function() { //wait for document ready
@@ -61,7 +68,7 @@ $(document).ready(function() { //wait for document ready
   $('.search').bind('input', function() {
     window.clearTimeout(timer);
     timer = window.setTimeout(function(){
-      var query = $('#selector').val();
+      var query = $('.search').val();
       $.ajax({
         url: "https://script.google.com/macros/s/AKfycbzr0R-IGH3xbXPcIs81BF1q_oe_6SQ34t7F1GpZxsXMykTlXA/exec?q=" + query,
 
@@ -74,7 +81,7 @@ $(document).ready(function() { //wait for document ready
         // Work with the response
         success: updateChart
       });
-      $('div.result_link').text("Loading...");
+      $('div.result_count').text("Loading...");
     }, delay);
   })
 }); // END READY 
