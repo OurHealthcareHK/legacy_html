@@ -23,7 +23,7 @@ Last updated by Our Application:
   
 <script>  //update chart
 
-require(['chart-js', 'sheetrock'], function(chart, sheetrock) {
+require(['chart-js', 'sheetrock', 'moment'], function(chart, sheetrock, moment) {
   
 var flu = [];
 var hfmd = [];
