@@ -18,10 +18,6 @@ var storedResponse;
 
 /* INITIALIZE - initialize the map and geocoder */
 
-function authenticated(){ google.maps.event.addDomListener(window, 'load', initialize); }
-
-
-
   function changePosition(position){
 
     if (position){
@@ -60,6 +56,7 @@ function initialize() {
         navigator.geolocation.getCurrentPosition(changePosition, function(e){ });
     }
 }
+initialize();
 });
 </script>
 <div id="map_canvas"></div>
