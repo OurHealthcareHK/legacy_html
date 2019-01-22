@@ -17,7 +17,6 @@ categories: [醫療服務實況]
 
 <script>
 require(['highcharts','highcharts-data','highcharts-exporting'], function(Highcharts,data,exporting) { 
-  data(Highcharts);
   exporting(Highcharts);
   var raw = {{ site.data.PRIVATEOPDPRICE | jsonify }};
   var options = {
