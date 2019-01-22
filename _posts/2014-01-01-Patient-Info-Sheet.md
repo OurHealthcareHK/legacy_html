@@ -57,18 +57,10 @@ tags: [健康資訊]
         );
       }
     }
-require(['typeahead','bloodhound'], function(typeahead, bloodhound) {
-
-$(document).ready(function() { //wait for document ready
-  var timer;
-  var delay = 600; // 0.6 seconds delay after last input
-
-  $('.search').bind('input', function() {
-    window.clearTimeout(timer);
-    timer = window.setTimeout(function(){
-      var query = $('.search').val();
-      $.ajax({
-        url: "https://script.google.com/macros/s/AKfycbzr0R-IGH3xbXPcIs81BF1q_oe_6SQ34t7F1GpZxsXMykTlXA/exec?q=" + query,
+    
+function search(keyword){
+  $.ajax({
+        url: "https://script.google.com/macros/s/AKfycbzr0R-IGH3xbXPcIs81BF1q_oe_6SQ34t7F1GpZxsXMykTlXA/exec?q=" + keyword,
 
         // The name of the callback parameter, as specified by the YQL service
         jsonpCallback: 'callback',
@@ -80,6 +72,18 @@ $(document).ready(function() { //wait for document ready
         success: updateChart
       });
       $('div.result_count').text("Loading...");
+}
+require(['typeahead','bloodhound'], function(typeahead, bloodhound) {
+
+$(document).ready(function() { //wait for document ready
+  var timer;
+  var delay = 1000; // 1 second delay after last input
+
+  $('.search').bind('input', function() {
+    window.clearTimeout(timer);
+    timer = window.setTimeout(function(){
+      var keyword = $('.search').val();
+      search(keyword);
     }, delay);
   })
 }); // END READY 
