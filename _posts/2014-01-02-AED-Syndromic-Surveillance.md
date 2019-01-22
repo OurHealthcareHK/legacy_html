@@ -38,6 +38,10 @@ var chartColors = {
 };
 
 var ctx = document.getElementById("chart").getContext("2d");
+
+require(['chart-js', 'sheetrock'], function(chart, sheetrock) {
+  var chart = new Chart(ctx, cfg);
+  
 var cfg = {
     type: 'bar',
     data: {
@@ -109,9 +113,6 @@ var cfg = {
         }
     }
 };
-require(['chart-js', 'sheetrock'], function(chart, sheetrock) {
-  var chart = new Chart(ctx, cfg);
-  
   function parseDate(dateString) {
     return moment(dateString, 'DD-MMM-YYYY', 'en');
   }
