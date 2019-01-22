@@ -3,8 +3,8 @@ require.config({
         'highcharts-data': ['highcharts']
     },
     paths: {
-        'highcharts': '//code.highcharts.com/highcharts',
-        'highcharts-data': '//code.highcharts.com/modules/data.src',
-        'highcharts-exporting': '//code.highcharts.com/modules/exporting.src'        
+        'highcharts': '//cdnjs.cloudflare.com/ajax/libs/highcharts/7.0.1/highcharts.src',
+        'highcharts-data': '//cdnjs.cloudflare.com/ajax/libs/highcharts/7.0.1/modules/data.src',
+        'highcharts-exporting': '//cdnjs.cloudflare.com/ajax/libs/highcharts/7.0.1/modules/exporting.src'        
     }
 });
