@@ -29,9 +29,6 @@ tags: [健康資訊]
 </div>
 
 <script>
-    function base64toImg(base64){
-        return "<img src=>";
-    }
     function updateChart(response) {
 	if (!response.rows){
      	 $('div.result_count').empty();
@@ -93,7 +90,7 @@ var names = new Bloodhound({
   local: nameArray
 });
 
-$('#bloodhound .typeahead').typeahead({
+$('.search').typeahead({
   hint: true,
   highlight: true,
   minLength: 1
