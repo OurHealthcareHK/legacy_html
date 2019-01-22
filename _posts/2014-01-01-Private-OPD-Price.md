@@ -62,4 +62,5 @@ require(['highcharts'], function(highcharts) {
       var chart = new Highcharts.Chart("highcharts", options);
       console.log(chart);
   }
+});
 </script>
