@@ -1,12 +1,10 @@
 require.config({
     shim: {
-        'typeahead': ['jquery'],
-        'bloodhound': ['jquery']
+        'highcharts': ['highcharts-data', 'highcharts-exporting']
     },
     paths: {
-        'highstock': '//code.highcharts.com/stock/highstock',
+        'highcharts': '//code.highcharts.com/highcharts',
         'highcharts-data': '//code.highcharts.com/modules/data',
-        'highcharts-exporting': '//code.highcharts.com/modules/exporting',
-        
+        'highcharts-exporting': '//code.highcharts.com/modules/exporting'        
     }
 });
