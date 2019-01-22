@@ -19,7 +19,6 @@ categories: [醫療服務實況]
 require(['highcharts','highcharts-data','highcharts-exporting'], function(Highcharts, data, exporting) { 
   exporting(Highcharts);
   data(Highcharts);
-  var raw = {{ site.data.PRIVATEOPDPRICE | jsonify }};
   var options = {
       "chart": {
           "type": "columnrange",
@@ -57,7 +56,7 @@ require(['highcharts','highcharts-data','highcharts-exporting'], function(Highch
           "shared": true
       },
       "data": {
-        "rows": raw
+        "rows": {{ site.data.PRIVATEOPDPRICE | jsonify }}
       }
   };
   console.log(data);
