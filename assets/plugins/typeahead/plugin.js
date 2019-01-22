@@ -1,6 +1,6 @@
 require.config({
     shim: {
-        'typeahead': ['jquery']
+        'typeahead': ['jquery'],
         'bloodhound': ['jquery']
     },
     paths: {
