@@ -3,8 +3,7 @@ require.config({
         'highcharts': {
             'exports': 'Highcharts',
             'deps': ['highcharts-base']
-        },
-        'highcharts-data': ['highcharts']
+        }
     },
     paths: {
         'highcharts-base': '//cdnjs.cloudflare.com/ajax/libs/highcharts/7.0.1/highcharts',        
