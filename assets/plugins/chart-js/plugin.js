@@ -1,6 +1,6 @@
 require.config({
     shim: {
-        'chart-js': ['moment-tc', 'moment']
+        'chart-js': ['moment', 'moment-tc']
     },
     paths: {
         'chart-js': '//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min',
