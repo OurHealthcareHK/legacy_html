@@ -29,10 +29,10 @@
       {% for category in site.categories %}
       <li class="nav-item dropdown">
         <!-- {{ category | jsonify }} -->
-        {% assign subitemlinks = category | map: 'url' %}
-        <a href="javascript:void(0)" data-toggle="dropdown" class="nav-link {% if subitemlinks contains page.url %} active{% endif %}">{{ forloop.index }}</a>
+        {% assign subitemlinks = category[1] | map: 'url' %}
+        <a href="javascript:void(0)" data-toggle="dropdown" class="nav-link {% if subitemlinks contains page.url %} active{% endif %}">{{ category[0] }}</a>
           <div class="dropdown-menu dropdown-menu-arrow">
-          {% for post in category %}
+          {% for post in category[1] %}
             <a href="{{ post.url | relative_url }}" class="dropdown-item {% if page.url == post.url %}active{% endif %}">{{ post.title }}</a>
           {% endfor %}
           </div>
