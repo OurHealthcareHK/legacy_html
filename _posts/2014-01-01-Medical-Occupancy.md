@@ -2,7 +2,7 @@
 layout: post
 title:  "內科床位佔用率\n（按日熱量圖）"
 desc: "於服務高峰期期間，醫管局每日發布的內科住院病床使用率數據。"
-tag: 醫療服務實況
+category: 醫療服務實況
 img: pic01.jpg
 level: 第一級
 ---
