@@ -1,13 +1,11 @@
 require.config({    
     shim: {
-        'highcharts': {
-            'exports': 'Highcharts',
-            'deps': ['highcharts-base']
-        }
     },
     paths: {
-        'highcharts-base': '//cdnjs.cloudflare.com/ajax/libs/highcharts/7.0.1/highcharts',        
-        'highcharts': '//cdnjs.cloudflare.com/ajax/libs/highcharts/7.0.1/highcharts-more',
+        highcharts: [
+            "http://code.highcharts.com/highcharts",
+            "http://code.highcharts.com/highcharts-more"
+        ]
         'highcharts-data': '//cdnjs.cloudflare.com/ajax/libs/highcharts/7.0.1/modules/data.src'    
     }
 });
