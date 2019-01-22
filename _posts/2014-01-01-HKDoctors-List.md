@@ -2,7 +2,7 @@
 layout: post
 title: 香港醫生網地圖
 desc: 由香港醫生網提供的醫生資料，包括資歷、應診地址、收費等。
-tags: [醫療服務地圖]
+categories: [醫療服務地圖]
 img: HKPCMAP.jpg
 level: 第二級
 ---
