@@ -18,49 +18,47 @@ categories: [醫療服務實況]
 <script>
 require(['highcharts'], function(highcharts) { 
   var raw = {{ site.data.PRIVATEOPDPRICE | jsonify }};
-  if (typeof window["Highcharts"] !== "undefined") {
-      var options = {
-          "chart": {
-              "type": "columnrange",
-              "inverted": true,
-              "polar": false
-          },
-          exporting: { enabled: false },
-          "plotOptions": {
-              "series": {
-                  "animation": false,
-                  "minPointLength": 5,
-                  "lineWidth": 5,
-                  "dataLabels": {
-                      "enabled": true,
-                      "style": {
-                          "color": "contrast",
-                          "fontSize": "11px",
-                          "fontWeight": "",
-                          "textOutline": "1px 1px contrast"
-                      }
+  var options = {
+      "chart": {
+          "type": "columnrange",
+          "inverted": true,
+          "polar": false
+      },
+      exporting: { enabled: false },
+      "plotOptions": {
+          "series": {
+              "animation": false,
+              "minPointLength": 5,
+              "lineWidth": 5,
+              "dataLabels": {
+                  "enabled": true,
+                  "style": {
+                      "color": "contrast",
+                      "fontSize": "11px",
+                      "fontWeight": "",
+                      "textOutline": "1px 1px contrast"
                   }
               }
-          },
-          "title": {
-              "text": ""
-          },
-          "subtitle": {
-              "text": ""
-          },
-          "exporting": {},
-          "credits": {
-              "enabled": false
-          },
-          "tooltip": {
-              "shared": true
-          },
-          "data": {
-            "rows": raw
           }
-      };
-      var chart = new Highcharts.Chart("highcharts", options);
-      console.log(chart);
-  }
+      },
+      "title": {
+          "text": ""
+      },
+      "subtitle": {
+          "text": ""
+      },
+      "exporting": {},
+      "credits": {
+          "enabled": false
+      },
+      "tooltip": {
+          "shared": true
+      },
+      "data": {
+        "rows": raw
+      }
+  };
+  var chart = new Highcharts.Chart("highcharts", options);
+  console.log(chart);
 });
 </script>
