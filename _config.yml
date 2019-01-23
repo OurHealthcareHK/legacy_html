@@ -1,7 +1,7 @@
 # Site settings
 title:          Our Healthcare HK
 description:    "Raising awareness for the healthcare system in Hong Kong"
-baseurl:        "/tabler"
+baseurl:        ""
 url:            "https://OurHealthcareHK.github.io"
 
 # Author
