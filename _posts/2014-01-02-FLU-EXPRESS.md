@@ -105,9 +105,10 @@ var settings =  {
 			parseInt(rows[j][i])]);
 	}	
       }
-      Highcharts.stockChart('outbreak_surveillance', $.extend(settings, { series : flu_outbreaks}));
       $("#info").text(JSON.stringify(flu_sample_count_series));
 
+      Highcharts.stockChart('outbreak_surveillance', $.extend(settings, { series : flu_outbreaks}));
+      
     }
     updateChart({{ site.data.FLUEXPRESS | jsonify }});
 
