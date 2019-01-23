@@ -19,6 +19,8 @@ categories: [公共衛生實況]
 
 <div id="outbreak_surveillance" style="height: 400px; min-width: 310px"></div>
 
+<div id="info"></div>
+
 ### 備註 Remarks
 - Since week 7 of 2014 (week ending 10 Feb, 2014), the Public Health Laboratory Services Branch has adopted new genetic tests as the primary tests for various respiratory viruses including influenza C.
 - 由2014年第7周(截至2月10日的一周)起，公共衞生化驗服務處採用新的基因測試作為各種呼吸系統病毒的基本化驗方法，當中包括丙型流感。
@@ -97,13 +99,14 @@ var settings =  {
       Highcharts.stockChart('lab_surveillance', $.extend(settings, { series : flu_sample_count_series}));
       for (var i = 16; i < 17; i++) {
 	flu_outbreaks[0] = {name:"學校/院舍爆發宗數", data: []};
-	for (var j=2; j<response.rows.length; j++){
+	for (var j=2; j<rows.length; j++){
 		flu_outbreaks[0].data.push(
 			[moment(rows[j][3], 'DD/MM/YYYY').valueOf(),
 			parseInt(rows[j][i])]);
 	}	
       }
       Highcharts.stockChart('outbreak_surveillance', $.extend(settings, { series : flu_outbreaks}));
+      
 
     }
     updateChart({{ site.data.FLUEXPRESS | jsonify }});
