@@ -90,7 +90,7 @@ var settings =  {
       	seriesNum = i-6;
 	dataLabel = ["A(H1)甲型(H1)", "A(H3)甲型(H3)", "B乙型", "C丙型"]
       	flu_sample_count_series[seriesNum] = {name:dataLabel[seriesNum],data:[]};
-	for (var j=2; j<rows.length; j++){
+	for (var j=3; j<rows.length; j++){
 		flu_sample_count_series[seriesNum].data.push(
 			[moment(rows[j][3], 'MM/DD/YYYY').valueOf(),
 			parseInt(rows[j][i])]);
@@ -98,7 +98,7 @@ var settings =  {
       }
       for (var i = 16; i < 17; i++) {
 	flu_outbreaks[0] = {name:"學校/院舍爆發宗數", data: []};
-	for (var j=2; j<rows.length; j++){
+	for (var j=3; j<rows.length; j++){
 		flu_outbreaks[0].data.push(
 			[moment(rows[j][3], 'MM/DD/YYYY').valueOf(),
 			parseInt(rows[j][i])]);
