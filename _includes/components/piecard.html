@@ -16,7 +16,7 @@ require(['c3', 'jquery'], function(c3, $) {
     var chart = c3.generate({
       bindto: '{{ id }}', // id of chart wrapper
       data: {
-        columns: [
+        rows: [
             // each columns data
           {{ labels | jsonify }},
           {{ values | jsonify }}
