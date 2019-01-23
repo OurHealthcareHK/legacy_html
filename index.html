@@ -22,10 +22,11 @@ Home
 
 </div>
 <div class="col-6 col-sm-4 col-lg-2">
-  {% include components/scoreboard.html title="New Replies" value="7" percentageChange=9 %}
-</div>
-<div class="col-6 col-sm-4 col-lg-2">
-  {% include components/scoreboard.html title="Followers" value="27.3K" percentageChange=3 %}
+  {% capture latestOccupancy %}{% assign y = site.data.AEDATTENDANCE | size | minus: 1 %}{% assign x = site.data.AEDATTENDANCE[0] | size | minus: 1 %}{{ site.data.AEDATTENDANCE[y][x]}}{% endcapture %} 
+  {% capture secondlatestOccupancy %}{% assign y = site.data.AEDATTENDANCE | size | minus: 2 %}{% assign x = site.data.AEDATTENDANCE[0] | size | minus: 1 %}{{ site.data.AEDATTENDANCE[y][x]}}{% endcapture %}
+  {% assign percent = latestOccupancy | minus: secondlatestOccupancy %}
+  {% include components/scoreboard.html title="經急症室求診人次" value=latestOccupancy percentageChange=percent colorinversion=true%}
+
 </div>
 <div class="col-6 col-sm-4 col-lg-2">
   {% include components/scoreboard.html title="Daily Earnings" value="$95" percentageChange=-2 %}
