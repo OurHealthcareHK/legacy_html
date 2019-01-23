@@ -9,12 +9,6 @@ level: 第一級
 <script src="{{ "/assets/plugins/sheetrock/plugin.js" | relative_url }}"></script>
 <script src="{{ "/assets/plugins/chart-js/plugin.js" | relative_url }}"></script>
 
-Last updated by Centre for Health Protection: 
-<span id="lastmodified"></span>
-
-Last updated by Our Application: 
-<span id="lastrequested"></span>
-
 <div class="chart-container" style="position: relative; height:600px;">
     <canvas id="chart" height="600" width="600"></canvas>
 </div>
@@ -113,17 +107,6 @@ var cfg = {
 };
   var chart = new Chart(ctx, cfg);
   
-  function getData(fetchSize) {
-      sheetrock({
-          url: mySpreadsheet,
-          query: "select D,E,F,G,H order by D desc",
-          fetchSize: fetchSize,
-
-          labels: ['End date of the week 該周的結束日期', 'Weekly average rate for the influenza-like illness syndrome group 流行性感冒病類症狀組的每周平均比率', 'Weekly average rate for the hand, foot and mouth disease syndrome group 手足口病症狀組的每周平均比率', 'Weekly average rate for the acute gastroenteritis syndrome group 急性腸道傳染病症狀組的每周平均比率', 'Weekly average rate for the acute conjunctivitis syndrome group 急性結膜炎症狀組的每周平均比率'],
-          callback: updateChart
-      });
-
-  }
   function updateChart(rows) {
       if (!rows) {
           return;
@@ -141,11 +124,8 @@ var cfg = {
       chart.config.data.datasets[3].data = conjunctivitis;
       chart.config.data.labels = labels;
       console.log(chart.config.data);
-      $("#lastrequested").text(JSON.stringify(labels));
-      $("#lastmodified").text(JSON.stringify(flu));
       chart.update();
   }
-  var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/1xgMyJ5BT1R-1ZFukNy6oH4_SwaCSag6voon7a4yVkLo/edit?#gid=0';
   updateChart({{ site.data.AEDSURVEILLANCE | jsonify }});
   
 });
