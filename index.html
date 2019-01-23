@@ -8,30 +8,30 @@ Home
 </h1>
 </div>
 <div class="row row-cards">
-<div class="col-6 col-sm-4 col-lg-2">
+<div class="col-6 col-sm-4 col-lg-3">
   {% capture latestOccupancy %}{% assign y = site.data.MEDOCCUPANCY | size | minus: 1 %}{% assign x = site.data.MEDOCCUPANCY[0] | size | minus: 1 %}{{ site.data.MEDOCCUPANCY[y][x] }}{% endcapture %} 
   {% capture secondlatestOccupancy %}{% assign y = site.data.MEDOCCUPANCY | size | minus: 2 %}{% assign x = site.data.MEDOCCUPANCY[0] | size | minus: 1 %}{{ site.data.MEDOCCUPANCY[y][x] }}{% endcapture %}
   {% assign percent = latestOccupancy | minus: secondlatestOccupancy %}
   {% include components/scoreboard.html title="平均內科床位佔用率" value=latestOccupancy percentageChange=percent colorinversion=true%}
 </div>
-<div class="col-6 col-sm-4 col-lg-2">
+<div class="col-6 col-sm-4 col-lg-3">
   {% capture latestOccupancy %}{% assign y = site.data.AEDADMISSION | size | minus: 1 %}{% assign x = site.data.AEDADMISSION[0] | size | minus: 1 %}{{ site.data.AEDADMISSION[y][x]}}{% endcapture %} 
   {% capture secondlatestOccupancy %}{% assign y = site.data.AEDADMISSION | size | minus: 2 %}{% assign x = site.data.AEDADMISSION[0] | size | minus: 1 %}{{ site.data.AEDADMISSION[y][x]}}{% endcapture %}
   {% assign percent = latestOccupancy | minus: secondlatestOccupancy %}
   {% include components/scoreboard.html title="經急症室入院人次" value=latestOccupancy percentageChange=percent colorinversion=true%}
 
 </div>
-<div class="col-6 col-sm-4 col-lg-2">
+<div class="col-6 col-sm-4 col-lg-3">
   {% capture latestOccupancy %}{% assign y = site.data.AEDATTENDANCE | size | minus: 1 %}{% assign x = site.data.AEDATTENDANCE[0] | size | minus: 1 %}{{ site.data.AEDATTENDANCE[y][x]}}{% endcapture %} 
   {% capture secondlatestOccupancy %}{% assign y = site.data.AEDATTENDANCE | size | minus: 2 %}{% assign x = site.data.AEDATTENDANCE[0] | size | minus: 1 %}{{ site.data.AEDATTENDANCE[y][x]}}{% endcapture %}
   {% assign percent = latestOccupancy | minus: secondlatestOccupancy %}
   {% include components/scoreboard.html title="經急症室求診人次" value=latestOccupancy percentageChange=percent colorinversion=true%}
 
 </div>
-<div class="col-6 col-sm-4 col-lg-2">
+<div class="col-6 col-sm-4 col-lg-3">
   {% include components/scoreboard.html title="Daily Earnings" value="$95" percentageChange=-2 %}
 </div>
-<div class="col-6 col-sm-4 col-lg-2">
+<div class="col-6 col-sm-4 col-lg-3">
 <div class="card">
   <div class="card-body p-3 text-center">
     <div class="text-right text-red">
