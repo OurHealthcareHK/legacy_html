@@ -96,7 +96,6 @@ var settings =  {
 			parseInt(rows[j][i])]);
 	}
       }
-      Highcharts.stockChart('lab_surveillance', $.extend(settings, { series : flu_sample_count_series}));
       for (var i = 16; i < 17; i++) {
 	flu_outbreaks[0] = {name:"學校/院舍爆發宗數", data: []};
 	for (var j=2; j<rows.length; j++){
@@ -105,8 +104,10 @@ var settings =  {
 			parseInt(rows[j][i])]);
 	}	
       }
-      $("#info").text(JSON.stringify(flu_sample_count_series));
+      console.log(flu_sample_count_series);
+      console.log(flu_outbreaks);
 
+      Highcharts.stockChart('lab_surveillance', $.extend(settings, { series : flu_sample_count_series}));
       Highcharts.stockChart('outbreak_surveillance', $.extend(settings, { series : flu_outbreaks}));
       
     }
