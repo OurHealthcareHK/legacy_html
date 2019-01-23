@@ -93,7 +93,7 @@ var settings =  {
 	for (var j=2; j<rows.length; j++){
 		flu_sample_count_series[seriesNum].data.push(
 			[moment(rows[j][3], 'DD/MM/YYYY').valueOf(),
-			parseInt(response.rows[j].cellsArray[i])]);
+			parseInt(rows[j][i])]);
 	}
       }
       Highcharts.stockChart('lab_surveillance', $.extend(settings, { series : flu_sample_count_series}));
@@ -106,7 +106,7 @@ var settings =  {
 	}	
       }
       Highcharts.stockChart('outbreak_surveillance', $.extend(settings, { series : flu_outbreaks}));
-      
+      $("#info").text(JSON.stringify(flu_sample_count_series));
 
     }
     updateChart({{ site.data.FLUEXPRESS | jsonify }});
