@@ -92,7 +92,7 @@ var settings =  {
       	flu_sample_count_series[seriesNum] = {name:dataLabel[seriesNum],data:[]};
 	for (var j=2; j<rows.length; j++){
 		flu_sample_count_series[seriesNum].data.push(
-			[moment(rows[j][3], 'DD/MM/YYYY').valueOf(),
+			[moment(rows[j][3], 'MM/DD/YYYY').valueOf(),
 			parseInt(rows[j][i])]);
 	}
       }
@@ -100,7 +100,7 @@ var settings =  {
 	flu_outbreaks[0] = {name:"學校/院舍爆發宗數", data: []};
 	for (var j=2; j<rows.length; j++){
 		flu_outbreaks[0].data.push(
-			[moment(rows[j][3], 'DD/MM/YYYY').valueOf(),
+			[moment(rows[j][3], 'MM/DD/YYYY').valueOf(),
 			parseInt(rows[j][i])]);
 	}	
       }
