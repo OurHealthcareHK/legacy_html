@@ -203,55 +203,9 @@ Home
     </script>
   </div>
   <div class="col-sm-6">
-    <div class="card">
-      <div class="card-header">
-	<h3 class="card-title">Chart title</h3>
-      </div>
-      <div class="card-body">
-	<div id="chart-pie" style="height: 12rem;"></div>
-      </div>
-    </div>
-    <script>
-      require(['c3', 'jquery'], function(c3, $) {
-	$(document).ready(function(){
-		var chart = c3.generate({
-			bindto: '#chart-pie', // id of chart wrapper
-			data: {
-				columns: [
-				    // each columns data
-					['data1', 63],
-					['data2', 44],
-					['data3', 12],
-					['data4', 14]
-				],
-				type: 'pie', // default type of chart
-				colors: {
-					'data1': tabler.colors["blue-darker"],
-					'data2': tabler.colors["blue"],
-					'data3': tabler.colors["blue-light"],
-					'data4': tabler.colors["blue-lighter"]
-				},
-				names: {
-				    // name of each serie
-					'data1': 'A',
-					'data2': 'B',
-					'data3': 'C',
-					'data4': 'D'
-				}
-			},
-			axis: {
-			},
-			legend: {
-		      show: false, //hide legend
-			},
-			padding: {
-				bottom: 0,
-				top: 0
-			},
-		});
-	});
-      });
-    </script>
+    {% assign labels = "流行性感冒病類,手足口病,急性腸道傳染病,急性結膜炎" | split: "," %}
+    {% assign values = site.data.AEDSURVEILLANCE | last | slice: 4, 4 %}	  
+    {% include components/piecard.html title="急診室求診者病狀" labels=labels values=values %}
   </div>
   <div class="col-sm-6">
     {% include components/progress.html title="New feedback" percentage="28" value="62" color = "red" %}
