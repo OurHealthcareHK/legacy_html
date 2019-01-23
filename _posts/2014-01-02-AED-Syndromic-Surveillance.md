@@ -146,7 +146,7 @@ var cfg = {
       chart.update();
   }
   var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/1xgMyJ5BT1R-1ZFukNy6oH4_SwaCSag6voon7a4yVkLo/edit?#gid=0';
-  updateChart({{ site.data.FLUEXPRESS | jsonify }});
+  updateChart({{ site.data.AEDSURVEILLANCE | jsonify }});
   
 });
 </script>
