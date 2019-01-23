@@ -8,7 +8,7 @@ categories: [公共衛生實況]
 ---
 <script src="{{ "/assets/plugins/chrono/plugin.js" | relative_url }}"></script>
 <script src="{{ "/assets/plugins/sheetrock/plugin.js" | relative_url }}"></script>
-<script src="{{ "/assets/plugins/chrono/highstock.js" | relative_url }}"></script>
+<script src="{{ "/assets/plugins/highstock/plugin.js" | relative_url }}"></script>
 
 ### 實驗室監測
 公共衞生化驗服務處所收集的呼吸道樣本中，季節性流感病毒陽性百分比。當中分別顯示季節性流感病毒的甲型(H1)、甲型(H3)、乙型及丙型流感株類。
