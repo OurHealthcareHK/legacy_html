@@ -108,12 +108,6 @@ var settings =  {
     }
     updateChart({{ site.data.FLUEXPRESS | jsonify }});
 
-    var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/1EB5xOIotB7cWWyjXakpgwxJ1BypCaN5eEyPYYvYngkQ/edit?#gid=0';
-    // Load an entire worksheet.
-    sheetrock({
-      url: mySpreadsheet,  
-      query: "select D,E,F,G,H,I,J,Q order by D",
-      callback: updateChart
-    });
+   
 });
 </script>
