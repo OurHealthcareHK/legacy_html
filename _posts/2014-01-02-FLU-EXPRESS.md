@@ -82,30 +82,31 @@ var settings =  {
 	var flu_sample_count_series = [];
 	var flu_outbreaks = [];
 	
-    function updateChart(error, options, response) {
-      console.log(response.rows);
-      for (var i = 3; i < 7; i++) {
-      	seriesNum = i-3;
+    function updateChart(rows) {
+      console.log(rows);
+      for (var i = 6; i < 10; i++) {
+      	seriesNum = i-6;
 	dataLabel = ["A(H1)甲型(H1)", "A(H3)甲型(H3)", "B乙型", "C丙型"]
       	flu_sample_count_series[seriesNum] = {name:dataLabel[seriesNum],data:[]};
-	for (var j=1; j<response.rows.length; j++){
+	for (var j=2; j<rows.length; j++){
 		flu_sample_count_series[seriesNum].data.push(
-			[moment(response.rows[j].cellsArray[0], 'DD/MM/YYYY').valueOf(),
+			[moment(rows[j][3], 'DD/MM/YYYY').valueOf(),
 			parseInt(response.rows[j].cellsArray[i])]);
 	}
       }
       Highcharts.stockChart('lab_surveillance', $.extend(settings, { series : flu_sample_count_series}));
-      for (var i = 7; i < 8; i++) {
+      for (var i = 16; i < 17; i++) {
 	flu_outbreaks[0] = {name:"學校/院舍爆發宗數", data: []};
-	for (var j=1; j<response.rows.length; j++){
+	for (var j=2; j<response.rows.length; j++){
 		flu_outbreaks[0].data.push(
-			[moment(response.rows[j].cellsArray[0], 'DD/MM/YYYY').valueOf(),
-			parseInt(response.rows[j].cellsArray[i])]);
+			[moment(rows[j][3], 'DD/MM/YYYY').valueOf(),
+			parseInt(rows[j][i])]);
 	}	
       }
       Highcharts.stockChart('outbreak_surveillance', $.extend(settings, { series : flu_outbreaks}));
 
     }
+    updateChart({{ site.data.FLUEXPRESS | jsonify }});
 
     var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/1EB5xOIotB7cWWyjXakpgwxJ1BypCaN5eEyPYYvYngkQ/edit?#gid=0';
     // Load an entire worksheet.
