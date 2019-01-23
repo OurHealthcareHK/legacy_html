@@ -18,8 +18,8 @@ require(['c3', 'jquery'], function(c3, $) {
       data: {
         columns: [
             // each columns data
-          {{ labels }},
-          {{ values }}
+          {{ labels | jsonify }},
+          {{ values | jsonify }}
         ],
         type: 'pie' // default type of chart
       },
