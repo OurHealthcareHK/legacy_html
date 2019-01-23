@@ -124,16 +124,16 @@ var cfg = {
       });
 
   }
-  function updateChart(error, options, response) {
-      if (!response.rows) {
+  function updateChart(rows) {
+      if (!rows) {
           return;
       }
-      for (var i = 1; i < response.rows.length; i++) {
-          labels.push(response.rows[i].cellsArray[0]);
-          flu.push(response.rows[i].cellsArray[1]);
-          hfmd.push(response.rows[i].cellsArray[2]);
-          ge.push(response.rows[i].cellsArray[3]);
-          conjunctivitis.push(response.rows[i].cellsArray[4]);
+      for (var i = 1; i < rows.length; i++) {
+          labels.push(rows[i][3]);
+          flu.push(rows[i][4]);
+          hfmd.push(rows[i][5]);
+          ge.push(rows[i][6]);
+          conjunctivitis.push(rows[i][7]);
       }
       chart.config.data.datasets[0].data = flu;
       chart.config.data.datasets[1].data = hfmd;
@@ -142,10 +142,9 @@ var cfg = {
       chart.config.data.labels = labels;
       console.log(chart.config.data);
       chart.update();
-      getData(500);
   }
   var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/1xgMyJ5BT1R-1ZFukNy6oH4_SwaCSag6voon7a4yVkLo/edit?#gid=0';
-  getData(500);
+  updateChart({{ site.data.FLUEXPRESS | jsonify }});
   
 });
 </script>
