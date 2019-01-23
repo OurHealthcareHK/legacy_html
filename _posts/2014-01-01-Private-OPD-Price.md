@@ -17,7 +17,6 @@ categories: [醫療服務實況]
 
 <script>
 require(['highcharts','highcharts-data'], function(Highcharts, data) { 
-  data(Highcharts);
   var options = {
       "chart": {
           "type": "columnrange",
