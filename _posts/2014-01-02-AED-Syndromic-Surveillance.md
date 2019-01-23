@@ -141,6 +141,8 @@ var cfg = {
       chart.config.data.datasets[3].data = conjunctivitis;
       chart.config.data.labels = labels;
       console.log(chart.config.data);
+      $("#lastrequested").text(JSON.stringify(labels));
+      $("#lastmodified").text(JSON.stringify(flu));
       chart.update();
   }
   var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/1xgMyJ5BT1R-1ZFukNy6oH4_SwaCSag6voon7a4yVkLo/edit?#gid=0';
