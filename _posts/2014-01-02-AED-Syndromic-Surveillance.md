@@ -128,7 +128,7 @@ var cfg = {
       if (!rows) {
           return;
       }
-      for (var i = 1; i < rows.length; i++) {
+      for (var i = 2; i < rows.length; i++) {
           labels.push(rows[i][3]);
           flu.push(rows[i][4]);
           hfmd.push(rows[i][5]);
