@@ -27,6 +27,35 @@ Home
   {% include components/scoreboard.html title="經急症室求診人次" value=latestOccupancy percentageChange=percent colorinversion=true%}
 </div>
 </div>
+<div class="row">
+  <div class="col-sm-6 col-lg-3">
+    {% assign values = "" %}
+    {% for row in site.data.FLUEXPRESS %}
+      {% assign values = values | append: " " | append: row[10] %}
+    {% endfor %}
+    {% assign values = values | split: " " | slice: -6, 6 %}
+    {% include components/line_chart_card.html title="流感陽性樣本" values = values id="flupositive" %}
+  </div>  
+  <div class="col-sm-6 col-lg-3">
+    {% assign values = "" %}
+    {% for row in site.data.FLUEXPRESS %}
+      {% assign values = values | append: " " | append: row[16] %}
+    {% endfor %}
+    {% assign values = values | split: " " | slice: -6, 6 %}
+    {% include components/line_chart_card.html title="疑似流感爆發" values = values id="fluoutbreak" %}
+  </div>
+  <div class="col-sm-6 col-lg-3">
+    {% assign values = "" %}
+    {% for row in site.data.FLUEXPRESS %}
+      {% if row[3].size > 0 %}
+        {% assign value = row[28] | plus: row[29] | plus: row[30] | plus: row[31] %}
+        {% assign values = values | append: " " | append: value %}
+      {% endif %}
+    {% endfor %}
+    {% assign values = values | split: " " | slice: -6, 6 %}
+    {% include components/line_chart_card.html title="流感嚴重個案" values = values id="flusevere" %}
+  </div>
+</div>
 <div class="row row-cards">
 <div class="col-lg-6">
 <div class="card">
@@ -980,37 +1009,6 @@ Home
 	</div>
       </li>
     </ul>
-  </div>
-</div>
-</div>
-<div class="col-md-6 col-lg-12">
-<div class="row">
-  <div class="col-sm-6 col-lg-3">
-    {% assign values = "" %}
-    {% for row in site.data.FLUEXPRESS %}
-      {% assign values = values | append: " " | append: row[10] %}
-    {% endfor %}
-    {% assign values = values | split: " " | slice: -6, 6 %}
-    {% include components/line_chart_card.html title="流感陽性樣本" values = values id="flupositive" %}
-  </div>  
-  <div class="col-sm-6 col-lg-3">
-    {% assign values = "" %}
-    {% for row in site.data.FLUEXPRESS %}
-      {% assign values = values | append: " " | append: row[16] %}
-    {% endfor %}
-    {% assign values = values | split: " " | slice: -6, 6 %}
-    {% include components/line_chart_card.html title="疑似流感爆發" values = values id="fluoutbreak" %}
-  </div>
-  <div class="col-sm-6 col-lg-3">
-    {% assign values = "" %}
-    {% for row in site.data.FLUEXPRESS %}
-      {% if row[3].size > 0 %}
-        {% assign value = row[28] | plus: row[29] | plus: row[30] | plus: row[31] %}
-        {% assign values = values | append: " " | append: value %}
-      {% endif %}
-    {% endfor %}
-    {% assign values = values | split: " " | slice: -6, 6 %}
-    {% include components/line_chart_card.html title="流感嚴重個案" values = values id="flusevere" %}
   </div>
 </div>
 </div>
