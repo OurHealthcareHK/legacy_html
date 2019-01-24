@@ -1132,9 +1132,8 @@ Home
   <div class="col-sm-6 col-lg-3">
     {% assign values = "" %}
     {% for row in site.data.FLUEXPRESS %}
-      {% assign values = values | append: " " | append: row[10] %}
-    {% endfor %}	  
-    {% assign values = values | strip | split: " " | slice: -10, 10 %}
+      {% assign values = values | append: " " %}
+    {% endfor %}
     {% include components/line_chart_card.html title="FLU LEVEL" %}
   </div>
   <div class="col-sm-6 col-lg-3">
