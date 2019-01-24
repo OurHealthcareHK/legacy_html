@@ -1006,8 +1006,8 @@ Home
     {% for row in site.data.FLUEXPRESS %}
       {% if row[3].size > 0 %}
         {% assign value = row[28] | plus: row[29] | plus: row[30] | plus: row[31] %}
+        {% assign values = values | append: " " | append: value %}
       {% endif %}
-      {% assign values = values | append: " " | append: value %}
     {% endfor %}
     {% assign values = values | split: " " | slice: -6, 6 %}
     {% include components/line_chart_card.html title="流感嚴重個案" values = values id="flusevere" %}
