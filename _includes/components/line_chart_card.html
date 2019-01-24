@@ -1,5 +1,6 @@
 {% assign title = include.title %}
 {% assign values = include.values %}
+{% assign id = include.id | default: "chart-bg-users" %}
 
 <div class="card">
   <div class="card-body">
@@ -8,14 +9,14 @@
 	<div class="text-muted">{{ title }}</div>
       </div>
       <div class="card-chart-bg">
-	<div id="chart-bg-users-3" style="height: 100%"></div>
+	<div id="{{ id }}" style="height: 100%"></div>
       </div>
     </div>
     <script>
       require(['c3', 'jquery'], function (c3, $) {
 	$(document).ready(function() {
 		var chart = c3.generate({
-			bindto: '#chart-bg-users-3',
+			bindto: '#{{ id }}',
 			padding: {
 				bottom: -10,
 				left: -1,
