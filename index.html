@@ -1004,7 +1004,9 @@ Home
   <div class="col-sm-6 col-lg-3">
     {% assign values = "" %}
     {% for row in site.data.FLUEXPRESS %}
-      {% assign value = row[28] | plus: row[29] | plus: row[30] | plus: row[31] %}
+      {% if row[3].size > 0 %}
+        {% assign value = row[28] | plus: row[29] | plus: row[30] | plus: row[31] %}
+      {% endif %}
       {% assign values = values | append: " " | append: value %}
     {% endfor %}
     {% assign values = values | split: " " | slice: -6, 6 %}
