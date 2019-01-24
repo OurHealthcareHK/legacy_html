@@ -2,7 +2,7 @@
 ---
 
 const version = '{{site.time | date: '%Y%m%d%H%M%S'}}';
-const prefix = "openmedicshk::";
+const prefix = "ourhealthcarehk::";
 const staticCacheName = prefix+version;
 
 const filesToCache = [
