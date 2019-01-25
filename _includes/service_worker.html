@@ -25,6 +25,20 @@ if (navigator.serviceWorker) {
             showOfflineToast();
           }
       });
+      navigator.serviceWorker.addEventListener('message', function(event) {
+          if (event.data.type == 'OFFLINE') {
+            require(['jquery'], function ($) {
+              if (event.data.offline)
+                $('#offline-bar').show();
+              else
+                $('#offline-bar').hide();
+            });
+          }
+      });
+ 
   });
+  
+  
+  
 }
 </script>
