@@ -47,12 +47,14 @@ self.addEventListener("activate", function(e){
 
 var offline = false;
 
-function toggleOfflineBar(offline){
-  require(['jquery'], function ($) {
-    if (offline)
-      $('#offline-bar').show();
-    else
-      $('#offline-bar').hide();
+function toggleOfflineBar(offline){  
+  clients.matchAll().then(function (clients) {
+      clients.forEach(function (client) {
+          client.postMessage({
+              type: 'OFFLINE',
+              offline: offline
+          });
+      });
   });
 }
 
