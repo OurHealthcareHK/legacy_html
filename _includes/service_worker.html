@@ -1,8 +1,5 @@
 <script>
-function showOfflineToast() {
-}
 
-// (1)
 if (navigator.serviceWorker) {
   navigator.serviceWorker.register("{{ "/sw.js" | relative_url }}",
               {
