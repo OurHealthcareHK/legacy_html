@@ -40,4 +40,15 @@
     <script src="{{ "/assets/plugins/input-mask/plugin.js" | relative_url }}"></script>
     <!-- leaflet Plugin -->
     <link href="{{ "/assets/plugins/leaflet/plugin.css" | relative_url }}" rel="stylesheet" />
+    <!-- onesignal -->
+    <link rel="manifest" href="/manifest.json" />
+    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+    <script>
+      var OneSignal = window.OneSignal || [];
+      OneSignal.push(function() {
+        OneSignal.init({
+          appId: "390486bd-4c9d-4095-837e-483fd7e78d24",
+        });
+      });
+    </script>
   </head>
