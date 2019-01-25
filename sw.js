@@ -45,13 +45,32 @@ self.addEventListener("activate", function(e){
   )
 });
 
+var offline = false;
+
+function toggleOfflineBar(offline){
+  require(['jquery'], function ($) {
+    if (offline)
+      $('#offline-bar').show();
+    else
+      $('#offline-bar').hide();
+  });
+}
 
 function onlineFirst(e, cacheResponse){  
       return caches.open(staticCacheName).then(function(cache) {
         return fetch(e.request).then(function(response){
           cache.put(e.request.url, response.clone());
+          if (offline){
+            offline = false;
+            toggleOfflineBar(offline);
+          }
           return response;
         }).catch(function(error) {
+          // assume offline
+          if (!offline){            
+            offline = true;
+            toggleOfflineBar(offline);
+          }
           if (cacheResponse){
             return cacheResponse;
           }
