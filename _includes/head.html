@@ -49,10 +49,10 @@
       OneSignal.push(function() {
         OneSignal.init({
           appId: "390486bd-4c9d-4095-837e-483fd7e78d24",
+        });        
+        OneSignal.on('notificationDisplay', function (event) {
+          console.warn('OneSignal notification displayed:', event);
         });
-      });
-      OneSignal.on('notificationDisplay', function (event) {
-        console.warn('OneSignal notification displayed:', event);
       });
     </script>
   </head>
