@@ -29,6 +29,8 @@ self.addEventListener("install", function(e){
   )
 });
 
+var notif_db;
+
 self.addEventListener("activate", function(e){
   e.waitUntil(
     caches.keys().then(function(cacheNames){
@@ -42,7 +44,19 @@ self.addEventListener("activate", function(e){
         })
       )
     })
-  )
+  );
+  var request = self.IndexedDB.open('NOTIF_DB', 1);
+  request.onsuccess = function(event) {
+      console.log('[onsuccess]', request.result);
+      notif_db = event.target.result; // === request.result
+  };
+  request.onerror = function(event) {
+      console.log('[onerror]', request.error);
+  };
+  request.onupgradeneeded = function(event) {
+    var notif_db = event.target.result;
+    var store = notif_db.createObjectStore('ONESIGNAL', {keyPath: 'id'});
+  };
 });
 
 var offline = false;
