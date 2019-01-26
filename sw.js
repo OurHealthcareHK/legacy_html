@@ -32,6 +32,7 @@ self.addEventListener("install", function(e){
 var notif_db;
 
 self.addEventListener("activate", function(e){
+  console.log("Activating worker "+staticCacheName);
   e.waitUntil(
     caches.keys().then(function(cacheNames){
       return Promise.all(
@@ -45,8 +46,7 @@ self.addEventListener("activate", function(e){
       )
     })
   );
-  console.log("activated");
-  var request = self.IndexedDB.open('NOTIF_DB', 1);
+  var request = self.indexedDB.open('NOTIF_DB', 1);
   request.onsuccess = function(event) {
       console.log('[onsuccess]', request.result);
       notif_db = event.target.result; // === request.result
