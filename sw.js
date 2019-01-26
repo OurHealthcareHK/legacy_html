@@ -45,6 +45,7 @@ self.addEventListener("activate", function(e){
       )
     })
   );
+  console.log("activated");
   var request = self.IndexedDB.open('NOTIF_DB', 1);
   request.onsuccess = function(event) {
       console.log('[onsuccess]', request.result);
