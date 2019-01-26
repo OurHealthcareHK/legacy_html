@@ -103,3 +103,7 @@ self.addEventListener("fetch", function(e){
      })
    )
 });
+
+self.addEventListener('push', function(pushEvent) {
+  console.log(pushEvent.data.json());
+});
