@@ -57,7 +57,7 @@ self.addEventListener("activate", function(e){
   request.onupgradeneeded = function(event) {
     var notif_db = event.target.result;
     var store = notif_db.createObjectStore('ONESIGNAL', {keyPath: 'id'});
-    store.createIndex('notif_id_unqiue, 'id', {unique: true});
+    store.createIndex('notif_id_unqiue', 'id', {unique: true});
   };
 });
 
