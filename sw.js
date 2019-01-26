@@ -57,6 +57,7 @@ self.addEventListener("activate", function(e){
   request.onupgradeneeded = function(event) {
     var notif_db = event.target.result;
     var store = notif_db.createObjectStore('ONESIGNAL', {keyPath: 'id'});
+    store.createIndex('notif_id_unqiue, 'id', {unique: true});
   };
 });
 
@@ -121,4 +122,14 @@ self.addEventListener("fetch", function(e){
 
 self.addEventListener('push', function(pushEvent) {
   console.log(pushEvent.data.json());
+  // create transaction from database
+  var transaction = notif_db.transaction('ONESIGNAL', 'readwrite');
+  transaction.onsuccess = function(event) {
+      console.log('[Transaction] READY!');
+  };
+  // get store from transaction
+  // returns IDBObjectStore instance
+  var notifStore = transaction.objectStore('ONESIGNAL');
+  // put notif data in productsStore
+  var db_op_req = notifStore.add(pushEvent.data); // IDBRequest
 });
